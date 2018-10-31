@@ -1,9 +1,9 @@
 #pragma once
 #include "Components.hpp"
+#include "Math.hpp"
 #include <SDL.h>
 
 #define printout std::cout
-#define end std::endl
 
 using namespace integra;
 using namespace components;
@@ -15,7 +15,7 @@ namespace integra {
 
 		void update();
 		void render();
-
+		void move(math::Vector2D* destination);
 		inline HealthComponent* getHP() {
 			return this->m_Hp;
 		}

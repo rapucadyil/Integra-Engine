@@ -1,7 +1,6 @@
 #include "Character.hpp"
 
 #define printout std::cout
-#define end std::endl
 
 namespace integra {
 
@@ -9,6 +8,7 @@ namespace integra {
 	{
 		this->m_Id = id;
 		this->m_Hp = new HealthComponent(300, 300);
+		this->m_Position = new TransformComponent();
 	}
 
 	Character::~Character()
@@ -22,7 +22,7 @@ namespace integra {
 
 
 		//Testing
-		this->m_Hp->modifyCurrentHealth(-10);
+		//this->m_Hp->modifyCurrentHealth(-10);
 	}
 
 	
@@ -32,5 +32,9 @@ namespace integra {
 		/* Do render for this specific character here */
 	}
 
-}
+	void Character::move(math::Vector2D * destination)
+	{
+		// TODO: (rj): Implement movement and move toward functions (maybe in Vector2D struct?)
+	}
 
+}
