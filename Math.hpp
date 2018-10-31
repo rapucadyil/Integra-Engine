@@ -1,4 +1,5 @@
 #pragma once
+#include "defines.h"
 namespace integra {
 	namespace math {
 		/*

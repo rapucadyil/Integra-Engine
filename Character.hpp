@@ -1,10 +1,7 @@
 #pragma once
 #include "Components.hpp"
 #include "Math.hpp"
-#include <SDL.h>
-
-#define printout std::cout
-
+#include "defines.h"
 using namespace integra;
 using namespace components;
 namespace integra {
@@ -31,7 +28,9 @@ namespace integra {
 		const char* m_Id;
 		HealthComponent* m_Hp;
 		TransformComponent* m_Position;
-		SDL_Texture* m_Sprite;
+		SpriteComponent* m_Sprite;
+	public:
+		void spriteSystemInitialization();
 	};
 
 }

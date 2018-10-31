@@ -131,6 +131,7 @@
   <ItemGroup>
     <ClInclude Include="Character.hpp" />
     <ClInclude Include="Components.hpp" />
+    <ClInclude Include="defines.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Math.hpp" />
   </ItemGroup>

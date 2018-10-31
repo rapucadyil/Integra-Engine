@@ -2,8 +2,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <vector>
-
-#define lst vector
+#include "defines.h"
 
 using namespace std;
 namespace integra {
@@ -12,11 +11,10 @@ namespace integra {
 		class Game {
 		private:
 			bool m_bIsRunning;
-			SDL_Window* m_Window;
-			SDL_Renderer* m_Renderer;
-			SDL_Texture* m_BkgTex;
 			int cnt;
 		public:
+			static SDL_Window* m_Window;            
+			static SDL_Renderer* m_Renderer;
 			static const int SCREEN_WIDTH = 640;
 			static const int SCREEN_HEIGHT = 480;
 			Game();

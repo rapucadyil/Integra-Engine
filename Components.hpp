@@ -1,8 +1,9 @@
 #pragma once
 #include <iostream>
 #include "Math.hpp"
-#define printout std::cout
-
+#include <SDL.h>
+#include <SDL_image.h>
+#include "defines.h"
 using namespace std;
 namespace integra {
 	namespace components {
@@ -36,7 +37,7 @@ namespace integra {
 					this->currentHealth = this->maxHealth;
 
 				//Debug stuff
-				printout << this->currentHealth << endl;
+				cout << this->currentHealth << endl;
 			}
 			/*
 			Modifies the value of the maximum health (will be used for buffs etc...)
@@ -47,9 +48,12 @@ namespace integra {
 					this->maxHealth = 0;
 
 				//Debug
-				printout << this->maxHealth << std::endl;
+				cout << this->maxHealth << std::endl;
 			}
 		};
+		/*
+		Defines a structure to hold transform properties (i.e. position)
+		*/
 		struct TransformComponent {
 		private:
 			math::Vector2D* m_Position;
@@ -66,6 +70,49 @@ namespace integra {
 			inline math::Vector2D* getPosition() {
 				return this->m_Position;
 			}
+		};
+		/*
+		Defines a structure that handles the sprite and animation functionality
+		*/
+		struct SpriteComponent {
+		private: 
+			SDL_Texture* m_Sprite;
+			SDL_Surface* m_SpriteSurface;
+			SDL_Renderer* m_Renderer;
+			int m_MaxFrames;
+			int m_CurrentFrame;
+			int m_FrameWidth;
+			int m_FrameHeight;
+
+		public:
+			inline SpriteComponent() {
+
+			}
+
+			inline SDL_Texture* getSprite() {
+				return this->m_Sprite;
+			}
+			inline SDL_Surface* getSpriteSurface() {
+				return this->m_SpriteSurface;
+			}
+			inline SDL_Renderer* getRenderer() {
+				return this->m_Renderer;
+			}
+			inline int getMaxFrames() {
+				return this->m_MaxFrames;
+			}
+			inline int getCurrentFrame() { 
+				return this->m_CurrentFrame;
+			}
+			inline int getFrameWidth() {
+				return this->m_FrameWidth;
+			}
+			inline int getFrameHeight() {
+				return this->m_FrameHeight;
+			}
+
+			//TODO(rj): figure out and implement rendering (first without anim)
+			//TODO(rj): figure out and implement rendering (with anim logic)
 		};
 
 	}
