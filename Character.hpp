@@ -7,11 +7,11 @@ using namespace components;
 namespace integra {
 	class Character {
 	public:
-		Character(const char* id);
+		Character(const char* id, const char* sprFilePath);
 		~Character();
 
 		void update();
-		void render();
+		void render(SDL_Renderer* renderer);
 		void move(math::Vector2D* destination);
 		inline HealthComponent* getHP() {
 			return this->m_Hp;
@@ -24,11 +24,17 @@ namespace integra {
 		inline TransformComponent* getPosition() {
 			return this->m_Position;
 		}
+		
+		inline SpriteComponent* getSprite() {
+			return this->m_SpriteComp;
+		}
 	private:
 		const char* m_Id;
+		const char* m_ImagePath;
+		SDL_Surface* m_Sprite;
 		HealthComponent* m_Hp;
 		TransformComponent* m_Position;
-		SpriteComponent* m_Sprite;
+		SpriteComponent* m_SpriteComp;
 	public:
 		void spriteSystemInitialization();
 	};

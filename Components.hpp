@@ -75,44 +75,29 @@ namespace integra {
 		Defines a structure that handles the sprite and animation functionality
 		*/
 		struct SpriteComponent {
-		private: 
+		private:
+			const char* m_Filepath;
 			SDL_Texture* m_Sprite;
-			SDL_Surface* m_SpriteSurface;
-			SDL_Renderer* m_Renderer;
-			int m_MaxFrames;
-			int m_CurrentFrame;
-			int m_FrameWidth;
-			int m_FrameHeight;
 
 		public:
-			inline SpriteComponent() {
+			inline SpriteComponent(const char* flp) {
+				this->m_Filepath = flp;
 
 			}
 
-			inline SDL_Texture* getSprite() {
-				return this->m_Sprite;
-			}
-			inline SDL_Surface* getSpriteSurface() {
-				return this->m_SpriteSurface;
-			}
-			inline SDL_Renderer* getRenderer() {
-				return this->m_Renderer;
-			}
-			inline int getMaxFrames() {
-				return this->m_MaxFrames;
-			}
-			inline int getCurrentFrame() { 
-				return this->m_CurrentFrame;
-			}
-			inline int getFrameWidth() {
-				return this->m_FrameWidth;
-			}
-			inline int getFrameHeight() {
-				return this->m_FrameHeight;
-			}
 
-			//TODO(rj): figure out and implement rendering (first without anim)
-			//TODO(rj): figure out and implement rendering (with anim logic)
+			inline const char* getFilepath() {
+				return this->m_Filepath;
+			}
+			
+			inline void render(SDL_Rect* src, SDL_Rect* dest, SDL_Renderer* renderer) {
+				SDL_Surface* tmp = IMG_Load(this->m_Filepath);
+				this->m_Sprite = SDL_CreateTextureFromSurface(renderer, tmp);
+				SDL_RenderCopy(renderer, this->m_Sprite, src, dest);
+				SDL_FreeSurface(tmp);
+				SDL_DestroyTexture(this->m_Sprite);
+				cout << "Successfully rendered sprite from SpriteComp->render()" << endl;
+			}
 		};
 
 	}

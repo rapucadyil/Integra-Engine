@@ -12,9 +12,10 @@ namespace integra {
 		private:
 			bool m_bIsRunning;
 			int cnt;
+			Character* m_Player;
+			SDL_Window* m_Window;            
+			SDL_Renderer* m_Renderer;
 		public:
-			static SDL_Window* m_Window;            
-			static SDL_Renderer* m_Renderer;
 			static const int SCREEN_WIDTH = 640;
 			static const int SCREEN_HEIGHT = 480;
 			Game();
@@ -28,6 +29,5 @@ namespace integra {
 			inline bool isRunning() {
 				return this->m_bIsRunning;
 			}
-
 		};
 } }

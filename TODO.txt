@@ -1,0 +1,6 @@
+TODO:
+- Scene Graph system [HIGH PRIO]
+	- Scene transitions [INHERIT PRIO]
+- Animation Logic [MED PRIO]
+- Optimizations
+- 
