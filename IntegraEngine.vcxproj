@@ -126,6 +126,8 @@
   <ItemGroup>
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="InputHandler.cpp" />
+    <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -133,7 +135,9 @@
     <ClInclude Include="Components.hpp" />
     <ClInclude Include="defines.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="InputHandler.h" />
     <ClInclude Include="Math.hpp" />
+    <ClInclude Include="Scene.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="TODO.txt" />

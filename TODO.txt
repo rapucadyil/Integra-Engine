@@ -2,5 +2,7 @@ TODO:
 - Scene Graph system [HIGH PRIO]
 	- Scene transitions [INHERIT PRIO]
 - Animation Logic [MED PRIO]
-- Optimizations
-- 
+	- Add frame wi and height and frame cont for sprite component [MED-HIGH PRIO]
+- Optimizations -> VRAM optimizaiton [MED PRIO]
+- XML serialization for saving and loading [MED PRIO]
+- Map System	[HIGH PRIO]

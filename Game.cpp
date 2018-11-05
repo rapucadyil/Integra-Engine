@@ -3,8 +3,9 @@
 using namespace std;
 namespace integra {
 	namespace main {
+		static bool m_bIsRunning;
 		Game::Game() {
-			this->m_bIsRunning = true;
+			m_bIsRunning = true;
 			this->cnt = 0;
 		}
 		bool Game::init(const char* title, int x, int y, int w, int h) {
@@ -13,7 +14,7 @@ namespace integra {
 				return false;
 			}
 			else {
-				this->m_Window = SDL_CreateWindow(title, x, y, w, h, SDL_WINDOW_MAXIMIZED);
+				this->m_Window = SDL_CreateWindow(title, x, y, w, h, SDL_WINDOW_SHOWN);
 				if (!m_Window) {
 					cout << "Failed to init Window!" << SDL_GetError() << std::endl;
 					return false;
@@ -23,7 +24,8 @@ namespace integra {
 				}
 			}
 			cout << "SDL Init, window and render successful" << std::endl;
-			m_Player = new Character("Player", "assets/test.png");
+			m_Player = new Character("Player", "assets/background.png");
+			m_Input = new InputHandler(true);
 			return true;
 		}
 
@@ -37,11 +39,12 @@ namespace integra {
 		}
 
 		void Game::handleEvents() {
+			m_Input->getSystemInput();
 			SDL_Event event;
 			while (SDL_PollEvent(&event)) {
 				switch (event.type) {
 				case SDL_QUIT:
-					this->m_bIsRunning = false;
+					m_bIsRunning = false;
 					break;
 				}
 			}
@@ -59,6 +62,9 @@ namespace integra {
 			SDL_Quit();
 		}
 
+		static bool IsRunning() {
+			return m_bIsRunning;
+		}
 
 	}
 }

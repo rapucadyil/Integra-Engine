@@ -96,7 +96,6 @@ namespace integra {
 				SDL_RenderCopy(renderer, this->m_Sprite, src, dest);
 				SDL_FreeSurface(tmp);
 				SDL_DestroyTexture(this->m_Sprite);
-				cout << "Successfully rendered sprite from SpriteComp->render()" << endl;
 			}
 		};
 
