@@ -10,6 +10,7 @@ public:
 	inline const char* getName() {
 		return this->m_Name;
 	}
+
 	inline Scene* getNext() {
 		return this->m_Next;
 	}

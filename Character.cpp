@@ -19,10 +19,13 @@ namespace integra {
 		this->m_Id, this->m_Hp, this->m_Position = nullptr;
 	}
 
+	void Character::Parent(Character parent)
+	{
+		this->m_Position = parent.m_Position;
+	}
+
 	void Character::update()
 	{
-
-
 		//Testing
 		//this->m_Hp->modifyCurrentHealth(-10);
 	}
@@ -42,9 +45,7 @@ namespace integra {
 		//TODO(rj): find a way to test the below code
 		this->m_Position->getPosition()->moveTowards(destination);	
 	}
+	
 
-	void Character::spriteSystemInitialization() {
-
-	}
 
 }

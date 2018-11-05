@@ -10,6 +10,8 @@ namespace integra {
 		Character(const char* id, const char* sprFilePath);
 		~Character();
 
+		void Parent(Character parent);
+
 		void update();
 		void render(SDL_Renderer* renderer);
 		void move(math::Vector2D* destination);
@@ -35,8 +37,6 @@ namespace integra {
 		HealthComponent* m_Hp;
 		TransformComponent* m_Position;
 		SpriteComponent* m_SpriteComp;
-	public:
-		void spriteSystemInitialization();
 	};
 
 }

@@ -9,9 +9,7 @@ namespace integra {
 			InputHandler(bool active);
 			~InputHandler();
 
-			void getSystemInput();
-
-			void update();
+			void getUserInput();
 
 			inline bool getRunningState() {
 				return this->m_refbIsRunning;

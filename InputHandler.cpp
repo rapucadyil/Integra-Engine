@@ -9,7 +9,7 @@ namespace integra {
 			this->m_bIsActive = active;
 			this->m_refbIsRunning = true;
 		}
-		void InputHandler::getSystemInput() {
+		void InputHandler::getUserInput() {
 			SDL_Event event;
 			while (SDL_PollEvent(&event)) {
 				switch (event.type)
@@ -27,13 +27,23 @@ namespace integra {
 						this->m_refbIsRunning = false;
 						break;
 					}
-
+				break;
+				case SDL_KEYUP:
+					switch (event.key.keysym.sym) {
+					case SDLK_LEFT:
+						cout << "left released" << endl;
+						break;
+					case SDLK_RIGHT:
+						cout << "right released" << endl;
+						break;
+					}
+				break;
+				case SDL_QUIT:
+					this->m_refbIsRunning = false;
+				break;
+					
 				}
 			}
-		}
-
-		void InputHandler::update() {
-			
 		}
 	}
 }

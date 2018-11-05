@@ -39,7 +39,7 @@ namespace integra {
 		}
 
 		void Game::handleEvents() {
-			m_Input->getSystemInput();
+			m_Input->getUserInput();
 			SDL_Event event;
 			while (SDL_PollEvent(&event)) {
 				switch (event.type) {
