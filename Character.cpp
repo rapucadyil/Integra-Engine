@@ -30,8 +30,6 @@ namespace integra {
 		//this->m_Hp->modifyCurrentHealth(-10);
 	}
 
-	
-
 	void Character::render(SDL_Renderer* renderer)
 	{
 		/* Do render for this specific character here */

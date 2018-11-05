@@ -5,4 +5,9 @@ TODO:
 	- Add frame wi and height and frame cont for sprite component [MED-HIGH PRIO]
 - Optimizations -> VRAM optimizaiton [MED PRIO]
 - XML serialization for saving and loading [MED PRIO]
-- Map System	[HIGH PRIO]
+- Map System	[PART DONE]
+	- figure out how to load textures based on map element pos [HIGH PRIO]
+
+DONE:
+- Input Handling framework
+- Map system framework

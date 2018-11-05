@@ -127,6 +127,7 @@
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="InputHandler.cpp" />
+    <ClCompile Include="Map.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
@@ -136,6 +137,7 @@
     <ClInclude Include="defines.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="InputHandler.h" />
+    <ClInclude Include="Map.h" />
     <ClInclude Include="Math.hpp" />
     <ClInclude Include="Scene.hpp" />
   </ItemGroup>
