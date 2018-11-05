@@ -129,7 +129,10 @@
     <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="State.cpp" />
+    <ClCompile Include="StateMachine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.hpp" />
@@ -140,6 +143,9 @@
     <ClInclude Include="Map.h" />
     <ClInclude Include="Math.hpp" />
     <ClInclude Include="Scene.hpp" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="State.h" />
+    <ClInclude Include="StateMachine.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="TODO.txt" />

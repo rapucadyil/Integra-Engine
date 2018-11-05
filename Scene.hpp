@@ -1,18 +1,13 @@
 #pragma once
 class Scene {
 private:
-	const char* m_Name;
-	Scene* m_Next;
+	bool m_bIsCompleted;
+
 public:
-	Scene(const char* name, Scene* next);
+	Scene();
 	~Scene();
 
-	inline const char* getName() {
-		return this->m_Name;
+	inline bool IsCompleted() {
+		return this->m_bIsCompleted;
 	}
-
-	inline Scene* getNext() {
-		return this->m_Next;
-	}
-
 };

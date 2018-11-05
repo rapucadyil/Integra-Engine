@@ -38,7 +38,7 @@ namespace integra {
 		this->m_SpriteComp->render(NULL, NULL, renderer);
 	}
 
-	void Character::move(math::Vector2D * destination)
+	void Character::move(math::Vector2D* destination)
 	{
 		//TODO(rj): find a way to test the below code
 		this->m_Position->getPosition()->moveTowards(destination);	
