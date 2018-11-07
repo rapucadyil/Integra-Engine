@@ -1,13 +1,23 @@
 #include "InputHandler.h"
 #include "SDL.h"
+#include "Components.hpp"
+#include "Math.hpp"
 #include <iostream>
 using namespace std;
+using namespace components;
+using namespace math;
 namespace integra {
 	namespace managers {
 		InputHandler::InputHandler(bool active)
 		{
 			this->m_bIsActive = active;
 			this->m_refbIsRunning = true;
+			this->m_PossesDstRect = new SDL_Rect();
+			this->m_PossesDstRect->x = 0;
+			this->m_PossesDstRect->y = 0;
+			this->m_PossesDstRect->w = 100;
+			this->m_PossesDstRect->h = 100;
+			this->m_MoveSpeed = 15;
 		}
 		void InputHandler::getUserInput() {
 			SDL_Event event;
@@ -18,12 +28,15 @@ namespace integra {
 					switch (event.key.keysym.sym) {
 					case SDLK_LEFT:
 						cout << "left pressed" << endl;
+						this->m_PossesDstRect->x -= this->m_MoveSpeed;
+						this->getCurrentlyPossessed()->getPosition()->getPosition()->move(new Vector2D(-1, 0));
 						break;
 					case SDLK_RIGHT:
 						cout << "right pressed" << endl;
+						this->m_PossesDstRect->x += this->m_MoveSpeed;
+						this->getCurrentlyPossessed()->getPosition()->getPosition()->move(new Vector2D(1, 0));
 						break;
 					case SDLK_ESCAPE:
-						cout << "Quit success!!" << endl;
 						this->m_refbIsRunning = false;
 						break;
 					}

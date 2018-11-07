@@ -31,5 +31,9 @@ namespace integra {
 			inline InputHandler* getInputHandler() {
 				return this->m_Input;
 			}
+
+			inline Character* getPlayer() {
+				return this->m_Player;
+			}
 		};
 } }

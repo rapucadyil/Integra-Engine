@@ -17,7 +17,7 @@ using namespace main;
 using namespace statemachine;
 
 bool m_bGameRunning = true;
-
+static const int FPS = 60;
 int main(int argc, char* argv[]) {
 	Game* g = new Game();
 	Map* m = new Map();
@@ -34,6 +34,7 @@ int main(int argc, char* argv[]) {
 	cout << "Next state valid test :" << testState->isNextStateValid() << endl;*/
 	while (m_bGameRunning) {
 		m_bGameRunning = g->getInputHandler()->getRunningState();
+		g->getInputHandler()->setCurrentlyPossessed(g->getPlayer());
 		g->render();	
 		g->update();
 		g->handleEvents();

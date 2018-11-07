@@ -85,7 +85,6 @@ namespace integra {
 
 			}
 
-
 			inline const char* getFilepath() {
 				return this->m_Filepath;
 			}

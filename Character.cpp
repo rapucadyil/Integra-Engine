@@ -11,7 +11,6 @@ namespace integra {
 		this->m_Position = new TransformComponent();
 		this->m_ImagePath = sprFilePath;
 		this->m_SpriteComp = new SpriteComponent(this->m_ImagePath);
-		//INIT_SPRITE_SYSTEM();	//TODO(rj): implement this function/macro properly with correct params and logic
 	}
 
 	Character::~Character()

@@ -4,6 +4,7 @@ using namespace std;
 namespace integra {
 	namespace main {
 		static bool m_bIsRunning;
+		SDL_Rect* tmpDstRect = new SDL_Rect(); 
 		Game::Game() {
 			m_bIsRunning = true;
 			this->cnt = 0;
@@ -33,21 +34,12 @@ namespace integra {
 			SDL_SetRenderDrawColor(this->m_Renderer, 162, 216, 206, 0);
 			SDL_RenderClear(this->m_Renderer);
 			/*put the render code here*/
-			m_Player->getSprite()->render(NULL, NULL, this->m_Renderer);
+			m_Player->getSprite()->render(NULL, this->m_Input->getPossesRect(), this->m_Renderer);
 			SDL_RenderPresent(this->m_Renderer);
-
 		}
 
 		void Game::handleEvents() {
 			m_Input->getUserInput();
-			SDL_Event event;
-			while (SDL_PollEvent(&event)) {
-				switch (event.type) {
-				case SDL_QUIT:
-					m_bIsRunning = false;
-					break;
-				}
-			}
 		}
 
 		void Game::update() {
@@ -58,7 +50,7 @@ namespace integra {
 		void Game::cleanUp() {
 			SDL_DestroyWindow(this->m_Window);
 			SDL_DestroyRenderer(this->m_Renderer);
-			cout << "Quit Successfully";
+			cout << "Quit Successfully" << endl;;
 			SDL_Quit();
 		}
 

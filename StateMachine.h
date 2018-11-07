@@ -13,11 +13,13 @@ namespace integra {
 			StateMachine();
 			~StateMachine();
 
+			void updateStates();
+
 			inline State* getCurrentState() {
 				return this->m_CurrentState;
 			}
 
-			void setCurrentState(State* n);
+			bool setCurrentState(State* n);
 		};
 	}
 }
