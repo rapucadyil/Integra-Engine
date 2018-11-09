@@ -13,7 +13,7 @@ namespace integra {
 			~State();
 
 			bool isNextStateValid();
-			void monitorCompletion();
+			void monitorCompletionAndAdvance();
 
 			inline const char* getUniqID() {
 				return this->m_UniqID;

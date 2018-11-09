@@ -7,7 +7,11 @@ TODO:
 - XML serialization for saving and loading [MED PRIO]
 - Map System	[PART DONE]
 	- figure out how to load textures based on map element pos [HIGH PRIO]
+- State System full implementation [HIGH PRIO]
+	- finishing states transitions [INHERITED PRIO]
+	- implement scene changes [INHERITED PRIO]
 
 DONE:
-- Input Handling framework
+- Input Handling framework / Input and Screen bound collision
 - Map system framework
+- State System framework

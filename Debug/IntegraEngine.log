@@ -1,5 +1,11 @@
-﻿  Game.cpp
+﻿  Character.cpp
+  Game.cpp
   InputHandler.cpp
   Source.cpp
+  State.cpp
+  StateMachine.cpp
+c:\users\rj-graphics\source\repos\integraengine\statemachine.cpp(17): warning C4018: '<': signed/unsigned mismatch
   Generating Code...
+c:\users\rj-graphics\source\repos\integraengine\inputhandler.cpp(158): warning C4715: 'integra::managers::InputHandler::isCollidingWithGameObject': not all control paths return a value
+c:\users\rj-graphics\source\repos\integraengine\inputhandler.cpp(137): warning C4715: 'integra::managers::InputHandler::isNextSpaceValid': not all control paths return a value
   IntegraEngine.vcxproj -> C:\Users\RJ-Graphics\source\repos\IntegraEngine\Debug\IntegraEngine.exe

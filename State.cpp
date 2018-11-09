@@ -14,11 +14,6 @@ namespace integra {
 			this->m_NextState = nullptr;
 		}
 
-		void State::monitorCompletion() {
-
-		}
-
-
 		bool State::isNextStateValid() {
 			if (this->m_Completed) {
 

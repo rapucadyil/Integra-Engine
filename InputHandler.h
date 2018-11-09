@@ -16,6 +16,9 @@ namespace integra {
 			InputHandler(bool active);
 			~InputHandler();
 
+			bool isNextSpaceValid(const char* );
+			bool isCollidingWithGameObject(SDL_Rect* , const char*);
+
 			void getUserInput();
 
 			inline Character* getCurrentlyPossessed() {
